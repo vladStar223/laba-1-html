@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица компьютерных игр</title>
+</head>
+<body>
+
+    <header align="center">
+        <h1>Таблица компьютерных игр</h1>
+        <p>Каталог видеоигр с возможностью настройки графиков, фильтрации и сортировки</p>
+        <hr width="90%">
+        <nav>
+            <p>
+                <a href="index.html">Главная</a> |
+                <a href="game.html">Ведьмак 3</a> |
+                <a href="table.html">Таблица игр</a>
+            </p>
+        </nav>
+        <hr width="90%">
+    </header>
+
+    <main>
+
+        <section>
+
+            <details open>
+                <summary><b>График</b></summary>
+                <form action="table.html" method="get">
+                    <fieldset>
+                        <legend>Параметры построения графика</legend>
+                        <p><b>Значение по оси OX:</b></p>
+                        <p>
+                            <input type="radio" id="ox_genre" name="axis_ox" value="genre" checked>
+                            <label for="ox_genre">Жанр</label><br>
+                            <input type="radio" id="ox_platform" name="axis_ox" value="platform">
+                            <label for="ox_platform">Платформа</label><br>
+                            <input type="radio" id="ox_year" name="axis_ox" value="year">
+                            <label for="ox_year">Год выпуска</label>
+                        </p>
+
+                        <p><b>Значение по оси OY:</b></p>
+                        <p>
+                            <input type="checkbox" id="oy_max_score" name="axis_oy" value="max_score" checked>
+                            <label for="oy_max_score">Максимальная оценка (Metacritic)</label><br>
+                            <input type="checkbox" id="oy_avg_score" name="axis_oy" value="avg_score">
+                            <label for="oy_avg_score">Средняя оценка (Metacritic)</label><br>
+                            <input type="checkbox" id="oy_sales" name="axis_oy" value="sales">
+                            <label for="oy_sales">Суммарные продажи (млн)</label><br>
+                            <input type="checkbox" id="oy_count" name="axis_oy" value="count">
+                            <label for="oy_count">Количество игр</label>
+                        </p>
+
+                        <p>
+                            <input type="submit" value="Построить">
+                        </p>
+
+                        <p><i>Здесь будет график</i></p>
+                    </fieldset>
+                </form>
+            </details>
+            <br>
+
+
+            <details>
+                <summary><b>Фильтр</b></summary>
+                <form action="table.html" method="get">
+                    <fieldset>
+                        <legend>Параметры фильтрации данных</legend>
+                        <p>
+                            <label for="f_title">Название: </label>
+                            <input type="text" id="f_title" name="filter_title" size="30">
+                        </p>
+                        <p>
+                            <label for="f_genre">Жанр: </label>
+                            <select id="f_genre" name="filter_genre">
+                                <option value="">(Все жанры)</option>
+                                <option value="rpg">RPG</option>
+                                <option value="action_rpg">Action-RPG</option>
+                                <option value="shooter">Шутер</option>
+                                <option value="action">Экшен</option>
+                                <option value="adventure">Приключения</option>
+                                <option value="strategy">Стратегия</option>
+                                <option value="platformer">Платформер</option>
+                                <option value="sandbox">Песочница</option>
+                                <option value="horror">Survival Horror</option>
+                                <option value="sim">Immersive Sim</option>
+                                <option value="racing">Гонки</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="f_platform">Платформа: </label>
+                            <select id="f_platform" name="filter_platform">
+                                <option value="">(Все платформы)</option>
+                                <option value="pc">PC</option>
+                                <option value="multi">Multi</option>
+                                <option value="playstation">PlayStation</option>
+                                <option value="switch">Nintendo Switch</option>
+                                <option value="xbox">Xbox</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="f_developer">Разработчик: </label>
+                            <input type="text" id="f_developer" name="filter_dev" size="30">
+                        </p>
+                        <p>
+                            <label for="f_year_from">Год: от </label>
+                            <input type="number" id="f_year_from" name="filter_year_from" min="1990" max="2026" size="6">
+                            <label for="f_year_to"> до </label>
+                            <input type="number" id="f_year_to" name="filter_year_to" min="1990" max="2026" size="6">
+                        </p>
+                        <p>
+                            <label for="f_score_from">Оценка Metacritic: от </label>
+                            <input type="number" id="f_score_from" name="filter_score_from" min="0" max="100" size="4">
+                            <label for="f_score_to"> до </label>
+                            <input type="number" id="f_score_to" name="filter_score_to" min="0" max="100" size="4">
+                        </p>
+                        <p>
+                            <label for="f_sales_from">Продажи (млн): от </label>
+                            <input type="number" id="f_sales_from" name="filter_sales_from" min="0" max="500" step="0.5" size="5">
+                            <label for="f_sales_to"> до </label>
+                            <input type="number" id="f_sales_to" name="filter_sales_to" min="0" max="500" step="0.5" size="5">
+                        </p>
+                        <p>
+                            <label for="f_time_from">Время прохождения (ч): от </label>
+                            <input type="number" id="f_time_from" name="filter_time_from" min="1" max="500" size="5">
+                            <label for="f_time_to"> до </label>
+                            <input type="number" id="f_time_to" name="filter_time_to" min="1" max="500" size="5">
+                        </p>
+                        <p>
+                            <input type="submit" value="Найти">
+                            <input type="reset" value="Сбросить">
+                        </p>
+                    </fieldset>
+                </form>
+            </details>
+            <br>
+
+            <!-- Блок 3: Сортировка -->
+            <details>
+                <summary><b>Сортировка</b></summary>
+                <form action="table.html" method="get">
+                    <fieldset>
+                        <legend>Настройка многоуровневой сортировки</legend>
+                        <p>
+                            <label for="s_lvl1">Первый уровень: </label>
+                            <select id="s_lvl1" name="sort_level_1">
+                                <option value="none">Нет</option>
+                                <option value="title">Название</option>
+                                <option value="genre">Жанр</option>
+                                <option value="platform">Платформа</option>
+                                <option value="developer">Разработчик</option>
+                                <option value="year">Год выпуска</option>
+                                <option value="score">Оценка Metacritic</option>
+                                <option value="sales">Продажи (млн)</option>
+                                <option value="time">Время прохождения</option>
+                            </select>
+                            <input type="checkbox" id="s_desc1" name="sort_desc_1" value="1">
+                            <label for="s_desc1">по убыванию?</label>
+                        </p>
+
+                        <p>
+                            <label for="s_lvl2">Второй уровень: </label>
+                            <select id="s_lvl2" name="sort_level_2">
+                                <option value="none">Нет</option>
+                                <option value="title">Название</option>
+                                <option value="genre">Жанр</option>
+                                <option value="platform">Платформа</option>
+                                <option value="developer">Разработчик</option>
+                                <option value="year">Год выпуска</option>
+                                <option value="score">Оценка Metacritic</option>
+                                <option value="sales">Продажи (млн)</option>
+                                <option value="time">Время прохождения</option>
+                            </select>
+                            <input type="checkbox" id="s_desc2" name="sort_desc_2" value="1">
+                            <label for="s_desc2">по убыванию?</label>
+                        </p>
+
+                        <p>
+                            <label for="s_lvl3">Третий уровень: </label>
+                            <select id="s_lvl3" name="sort_level_3">
+                                <option value="none">Нет</option>
+                                <option value="title">Название</option>
+                                <option value="genre">Жанр</option>
+                                <option value="platform">Платформа</option>
+                                <option value="developer">Разработчик</option>
+                                <option value="year">Год выпуска</option>
+                                <option value="score">Оценка Metacritic</option>
+                                <option value="sales">Продажи (млн)</option>
+                                <option value="time">Время прохождения</option>
+                            </select>
+                            <input type="checkbox" id="s_desc3" name="sort_desc_3" value="1">
+                            <label for="s_desc3">по убыванию?</label>
+                        </p>
+
+                        <p>
+                            <input type="submit" value="Сортировать">
+                        </p>
+                    </fieldset>
+                </form>
+            </details>
+            <br>
+        </section>
+
+        <section align="center">
+            <hr width="90%">
+            <h2>Таблица игр</h2>
+
+            <table border="1" cellpadding="6" cellspacing="0" width="95%" align="center">
+                <thead>
+                    <tr bgcolor="#eeeeee">
+                        <th>Название</th>
+                        <th>Жанр</th>
+                        <th>Платформа</th>
+                        <th>Разработчик</th>
+                        <th>Год</th>
+                        <th>Metacritic</th>
+                        <th>Продажи (млн)</th>
+                        <th>Время (ч)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>The Witcher 3: Wild Hunt</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>CD Projekt RED</td>
+                        <td align="center">2015</td>
+                        <td align="center">93</td>
+                        <td align="right">50.0</td>
+                        <td align="right">52</td>
+                    </tr>
+                    <tr>
+                        <td>Half-Life 2</td>
+                        <td>Шутер</td>
+                        <td align="center">PC</td>
+                        <td>Valve</td>
+                        <td align="center">2004</td>
+                        <td align="center">96</td>
+                        <td align="right">12.0</td>
+                        <td align="right">15</td>
+                    </tr>
+                    <tr>
+                        <td>Grand Theft Auto V</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Rockstar Games</td>
+                        <td align="center">2013</td>
+                        <td align="center">97</td>
+                        <td align="right">190.0</td>
+                        <td align="right">32</td>
+                    </tr>
+                    <tr>
+                        <td>The Elder Scrolls V: Skyrim</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Bethesda Game Studios</td>
+                        <td align="center">2011</td>
+                        <td align="center">94</td>
+                        <td align="right">60.0</td>
+                        <td align="right">34</td>
+                    </tr>
+                    <tr>
+                        <td>The Legend of Zelda: BotW</td>
+                        <td>Приключения</td>
+                        <td align="center">Nintendo</td>
+                        <td>Nintendo</td>
+                        <td align="center">2017</td>
+                        <td align="center">97</td>
+                        <td align="right">31.6</td>
+                        <td align="right">50</td>
+                    </tr>
+                    <tr>
+                        <td>Minecraft</td>
+                        <td>Песочница</td>
+                        <td align="center">Multi</td>
+                        <td>Mojang Studios</td>
+                        <td align="center">2011</td>
+                        <td align="center">93</td>
+                        <td align="right">300.0</td>
+                        <td align="right">90</td>
+                    </tr>
+                    <tr>
+                        <td>Red Dead Redemption 2</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Rockstar Games</td>
+                        <td align="center">2018</td>
+                        <td align="center">97</td>
+                        <td align="right">61.0</td>
+                        <td align="right">50</td>
+                    </tr>
+                    <tr>
+                        <td>Portal 2</td>
+                        <td>Головоломка</td>
+                        <td align="center">Multi</td>
+                        <td>Valve</td>
+                        <td align="center">2011</td>
+                        <td align="center">95</td>
+                        <td align="right">8.5</td>
+                        <td align="right">9</td>
+                    </tr>
+                    <tr>
+                        <td>Dark Souls</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>FromSoftware</td>
+                        <td align="center">2011</td>
+                        <td align="center">89</td>
+                        <td align="right">5.5</td>
+                        <td align="right">42</td>
+                    </tr>
+                    <tr>
+                        <td>Elden Ring</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>FromSoftware</td>
+                        <td align="center">2022</td>
+                        <td align="center">96</td>
+                        <td align="right">25.0</td>
+                        <td align="right">58</td>
+                    </tr>
+                    <tr>
+                        <td>God of War (2018)</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Santa Monica Studio</td>
+                        <td align="center">2018</td>
+                        <td align="center">94</td>
+                        <td align="right">23.0</td>
+                        <td align="right">21</td>
+                    </tr>
+                    <tr>
+                        <td>Cyberpunk 2077</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>CD Projekt RED</td>
+                        <td align="center">2020</td>
+                        <td align="center">86</td>
+                        <td align="right">25.0</td>
+                        <td align="right">25</td>
+                    </tr>
+                    <tr>
+                        <td>Doom Eternal</td>
+                        <td>Шутер</td>
+                        <td align="center">Multi</td>
+                        <td>id Software</td>
+                        <td align="center">2020</td>
+                        <td align="center">88</td>
+                        <td align="right">6.0</td>
+                        <td align="right">14</td>
+                    </tr>
+                    <tr>
+                        <td>BioShock</td>
+                        <td>Шутер</td>
+                        <td align="center">Multi</td>
+                        <td>Irrational Games</td>
+                        <td align="center">2007</td>
+                        <td align="center">96</td>
+                        <td align="right">7.0</td>
+                        <td align="right">12</td>
+                    </tr>
+                    <tr>
+                        <td>Mass Effect 2</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>BioWare</td>
+                        <td align="center">2010</td>
+                        <td align="center">96</td>
+                        <td align="right">6.0</td>
+                        <td align="right">25</td>
+                    </tr>
+                    <tr>
+                        <td>Baldur's Gate 3</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Larian Studios</td>
+                        <td align="center">2023</td>
+                        <td align="center">96</td>
+                        <td align="right">15.0</td>
+                        <td align="right">65</td>
+                    </tr>
+                    <tr>
+                        <td>Hollow Knight</td>
+                        <td>Метроидвания</td>
+                        <td align="center">Multi</td>
+                        <td>Team Cherry</td>
+                        <td align="center">2017</td>
+                        <td align="center">87</td>
+                        <td align="right">4.5</td>
+                        <td align="right">27</td>
+                    </tr>
+                    <tr>
+                        <td>Super Mario Odyssey</td>
+                        <td>Платформер</td>
+                        <td align="center">Nintendo</td>
+                        <td>Nintendo</td>
+                        <td align="center">2017</td>
+                        <td align="center">97</td>
+                        <td align="right">27.6</td>
+                        <td align="right">13</td>
+                    </tr>
+                    <tr>
+                        <td>Terraria</td>
+                        <td>Песочница</td>
+                        <td align="center">Multi</td>
+                        <td>Re-Logic</td>
+                        <td align="center">2011</td>
+                        <td align="center">83</td>
+                        <td align="right">58.7</td>
+                        <td align="right">50</td>
+                    </tr>
+                    <tr>
+                        <td>Fallout: New Vegas</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Obsidian Entertainment</td>
+                        <td align="center">2010</td>
+                        <td align="center">84</td>
+                        <td align="right">12.0</td>
+                        <td align="right">28</td>
+                    </tr>
+                    <tr>
+                        <td>Bloodborne</td>
+                        <td>Action-RPG</td>
+                        <td align="center">PlayStation</td>
+                        <td>FromSoftware</td>
+                        <td align="center">2015</td>
+                        <td align="center">92</td>
+                        <td align="right">7.5</td>
+                        <td align="right">35</td>
+                    </tr>
+                    <tr>
+                        <td>Uncharted 4: A Thief's End</td>
+                        <td>Приключения</td>
+                        <td align="center">Multi</td>
+                        <td>Naughty Dog</td>
+                        <td align="center">2016</td>
+                        <td align="center">93</td>
+                        <td align="right">16.0</td>
+                        <td align="right">15</td>
+                    </tr>
+                    <tr>
+                        <td>The Last of Us Part I</td>
+                        <td>Приключения</td>
+                        <td align="center">Multi</td>
+                        <td>Naughty Dog</td>
+                        <td align="center">2013</td>
+                        <td align="center">95</td>
+                        <td align="right">20.0</td>
+                        <td align="right">15</td>
+                    </tr>
+                    <tr>
+                        <td>Hades</td>
+                        <td>Рогалик</td>
+                        <td align="center">Multi</td>
+                        <td>Supergiant Games</td>
+                        <td align="center">2020</td>
+                        <td align="center">93</td>
+                        <td align="right">3.5</td>
+                        <td align="right">22</td>
+                    </tr>
+                    <tr>
+                        <td>Diablo II: Resurrected</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Blizzard Entertainment</td>
+                        <td align="center">2021</td>
+                        <td align="center">80</td>
+                        <td align="right">5.0</td>
+                        <td align="right">35</td>
+                    </tr>
+                    <tr>
+                        <td>StarCraft II: Wings of Liberty</td>
+                        <td>Стратегия</td>
+                        <td align="center">PC</td>
+                        <td>Blizzard Entertainment</td>
+                        <td align="center">2010</td>
+                        <td align="center">93</td>
+                        <td align="right">6.0</td>
+                        <td align="right">18</td>
+                    </tr>
+                    <tr>
+                        <td>Heroes of Might and Magic III</td>
+                        <td>Стратегия</td>
+                        <td align="center">PC</td>
+                        <td>New World Computing</td>
+                        <td align="center">1999</td>
+                        <td align="center">87</td>
+                        <td align="right">3.0</td>
+                        <td align="right">40</td>
+                    </tr>
+                    <tr>
+                        <td>Civilization VI</td>
+                        <td>Стратегия</td>
+                        <td align="center">Multi</td>
+                        <td>Firaxis Games</td>
+                        <td align="center">2016</td>
+                        <td align="center">88</td>
+                        <td align="right">12.0</td>
+                        <td align="right">30</td>
+                    </tr>
+                    <tr>
+                        <td>Age of Empires II: DE</td>
+                        <td>Стратегия</td>
+                        <td align="center">Multi</td>
+                        <td>Forgotten Empires</td>
+                        <td align="center">2019</td>
+                        <td align="center">84</td>
+                        <td align="right">5.0</td>
+                        <td align="right">25</td>
+                    </tr>
+                    <tr>
+                        <td>S.T.A.L.K.E.R.: Shadow of Chernobyl</td>
+                        <td>Шутер</td>
+                        <td align="center">PC</td>
+                        <td>GSC Game World</td>
+                        <td align="center">2007</td>
+                        <td align="center">82</td>
+                        <td align="right">4.0</td>
+                        <td align="right">16</td>
+                    </tr>
+                    <tr>
+                        <td>Metro 2033 Redux</td>
+                        <td>Шутер</td>
+                        <td align="center">Multi</td>
+                        <td>4A Games</td>
+                        <td align="center">2014</td>
+                        <td align="center">90</td>
+                        <td align="right">8.0</td>
+                        <td align="right">10</td>
+                    </tr>
+                    <tr>
+                        <td>Deus Ex: Human Revolution</td>
+                        <td>Immersive Sim</td>
+                        <td align="center">Multi</td>
+                        <td>Eidos Montreal</td>
+                        <td align="center">2011</td>
+                        <td align="center">90</td>
+                        <td align="right">5.0</td>
+                        <td align="right">22</td>
+                    </tr>
+                    <tr>
+                        <td>Dishonored</td>
+                        <td>Immersive Sim</td>
+                        <td align="center">Multi</td>
+                        <td>Arkane Studios</td>
+                        <td align="center">2012</td>
+                        <td align="center">91</td>
+                        <td align="right">5.5</td>
+                        <td align="right">12</td>
+                    </tr>
+                    <tr>
+                        <td>Prey</td>
+                        <td>Immersive Sim</td>
+                        <td align="center">Multi</td>
+                        <td>Arkane Studios</td>
+                        <td align="center">2017</td>
+                        <td align="center">82</td>
+                        <td align="right">3.0</td>
+                        <td align="right">16</td>
+                    </tr>
+                    <tr>
+                        <td>Alan Wake 2</td>
+                        <td>Survival Horror</td>
+                        <td align="center">Multi</td>
+                        <td>Remedy Entertainment</td>
+                        <td align="center">2023</td>
+                        <td align="center">89</td>
+                        <td align="right">1.3</td>
+                        <td align="right">18</td>
+                    </tr>
+                    <tr>
+                        <td>Resident Evil 4 Remake</td>
+                        <td>Survival Horror</td>
+                        <td align="center">Multi</td>
+                        <td>Capcom</td>
+                        <td align="center">2023</td>
+                        <td align="center">93</td>
+                        <td align="right">7.0</td>
+                        <td align="right">16</td>
+                    </tr>
+                    <tr>
+                        <td>Silent Hill 2</td>
+                        <td>Survival Horror</td>
+                        <td align="center">Multi</td>
+                        <td>Konami</td>
+                        <td align="center">2001</td>
+                        <td align="center">89</td>
+                        <td align="right">2.0</td>
+                        <td align="right">9</td>
+                    </tr>
+                    <tr>
+                        <td>Monster Hunter: World</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Capcom</td>
+                        <td align="center">2018</td>
+                        <td align="center">90</td>
+                        <td align="right">25.0</td>
+                        <td align="right">48</td>
+                    </tr>
+                    <tr>
+                        <td>Sekiro: Shadows Die Twice</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>FromSoftware</td>
+                        <td align="center">2019</td>
+                        <td align="center">90</td>
+                        <td align="right">10.0</td>
+                        <td align="right">30</td>
+                    </tr>
+                    <tr>
+                        <td>Counter-Strike 2</td>
+                        <td>Шутер</td>
+                        <td align="center">PC</td>
+                        <td>Valve</td>
+                        <td align="center">2023</td>
+                        <td align="center">82</td>
+                        <td align="right">45.0</td>
+                        <td align="right">150</td>
+                    </tr>
+                    <tr>
+                        <td>Dota 2</td>
+                        <td>MOBA</td>
+                        <td align="center">PC</td>
+                        <td>Valve</td>
+                        <td align="center">2013</td>
+                        <td align="center">90</td>
+                        <td align="right">50.0</td>
+                        <td align="right">200</td>
+                    </tr>
+                    <tr>
+                        <td>League of Legends</td>
+                        <td>MOBA</td>
+                        <td align="center">PC</td>
+                        <td>Riot Games</td>
+                        <td align="center">2009</td>
+                        <td align="center">78</td>
+                        <td align="right">150.0</td>
+                        <td align="right">200</td>
+                    </tr>
+                    <tr>
+                        <td>Overwatch</td>
+                        <td>Шутер</td>
+                        <td align="center">Multi</td>
+                        <td>Blizzard Entertainment</td>
+                        <td align="center">2016</td>
+                        <td align="center">91</td>
+                        <td align="right">50.0</td>
+                        <td align="right">20</td>
+                    </tr>
+                    <tr>
+                        <td>Apex Legends</td>
+                        <td>Королевская битва</td>
+                        <td align="center">Multi</td>
+                        <td>Respawn Entertainment</td>
+                        <td align="center">2019</td>
+                        <td align="center">89</td>
+                        <td align="right">100.0</td>
+                        <td align="right">80</td>
+                    </tr>
+                    <tr>
+                        <td>Forza Horizon 5</td>
+                        <td>Гонки</td>
+                        <td align="center">Multi</td>
+                        <td>Playground Games</td>
+                        <td align="center">2021</td>
+                        <td align="center">92</td>
+                        <td align="right">35.0</td>
+                        <td align="right">20</td>
+                    </tr>
+                    <tr>
+                        <td>Need for Speed: Most Wanted</td>
+                        <td>Гонки</td>
+                        <td align="center">Multi</td>
+                        <td>EA Black Box</td>
+                        <td align="center">2005</td>
+                        <td align="center">82</td>
+                        <td align="right">16.0</td>
+                        <td align="right">15</td>
+                    </tr>
+                    <tr>
+                        <td>Gran Turismo 7</td>
+                        <td>Автосимулятор</td>
+                        <td align="center">PlayStation</td>
+                        <td>Polyphony Digital</td>
+                        <td align="center">2022</td>
+                        <td align="center">87</td>
+                        <td align="right">6.0</td>
+                        <td align="right">30</td>
+                    </tr>
+                    <tr>
+                        <td>Detroit: Become Human</td>
+                        <td>Интерактивное кино</td>
+                        <td align="center">Multi</td>
+                        <td>Quantic Dream</td>
+                        <td align="center">2018</td>
+                        <td align="center">78</td>
+                        <td align="right">9.0</td>
+                        <td align="right">12</td>
+                    </tr>
+                    <tr>
+                        <td>Life is Strange</td>
+                        <td>Приключения</td>
+                        <td align="center">Multi</td>
+                        <td>Dontnod Entertainment</td>
+                        <td align="center">2015</td>
+                        <td align="center">85</td>
+                        <td align="right">5.0</td>
+                        <td align="right">14</td>
+                    </tr>
+                    <tr>
+                        <td>Subnautica</td>
+                        <td>Выживание</td>
+                        <td align="center">Multi</td>
+                        <td>Unknown Worlds</td>
+                        <td align="center">2018</td>
+                        <td align="center">87</td>
+                        <td align="right">6.0</td>
+                        <td align="right">30</td>
+                    </tr>
+                    <tr>
+                        <td>Disco Elysium</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>ZA/UM</td>
+                        <td align="center">2019</td>
+                        <td align="center">91</td>
+                        <td align="right">3.0</td>
+                        <td align="right">22</td>
+                    </tr>
+                    <tr>
+                        <td>Celeste</td>
+                        <td>Платформер</td>
+                        <td align="center">Multi</td>
+                        <td>Maddy Makes Games</td>
+                        <td align="center">2018</td>
+                        <td align="center">92</td>
+                        <td align="right">1.5</td>
+                        <td align="right">9</td>
+                    </tr>
+                    <tr>
+                        <td>Cuphead</td>
+                        <td>Платформер</td>
+                        <td align="center">Multi</td>
+                        <td>Studio MDHR</td>
+                        <td align="center">2017</td>
+                        <td align="center">88</td>
+                        <td align="right">6.0</td>
+                        <td align="right">11</td>
+                    </tr>
+                    <tr>
+                        <td>The Witcher 2: Assassins of Kings</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>CD Projekt RED</td>
+                        <td align="center">2011</td>
+                        <td align="center">88</td>
+                        <td align="right">10.0</td>
+                        <td align="right">24</td>
+                    </tr>
+                    <tr>
+                        <td>Fallout 4</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Bethesda Game Studios</td>
+                        <td align="center">2015</td>
+                        <td align="center">87</td>
+                        <td align="right">25.0</td>
+                        <td align="right">30</td>
+                    </tr>
+                    <tr>
+                        <td>Star Wars Jedi: Fallen Order</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Respawn Entertainment</td>
+                        <td align="center">2019</td>
+                        <td align="center">81</td>
+                        <td align="right">10.0</td>
+                        <td align="right">17</td>
+                    </tr>
+                    <tr>
+                        <td>Star Wars Jedi: Survivor</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Respawn Entertainment</td>
+                        <td align="center">2023</td>
+                        <td align="center">85</td>
+                        <td align="right">5.0</td>
+                        <td align="right">20</td>
+                    </tr>
+                    <tr>
+                        <td>Assassins Creed IV: Black Flag</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Ubisoft</td>
+                        <td align="center">2013</td>
+                        <td align="center">88</td>
+                        <td align="right">15.0</td>
+                        <td align="right">23</td>
+                    </tr>
+                    <tr>
+                        <td>Assassins Creed II</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Ubisoft</td>
+                        <td align="center">2009</td>
+                        <td align="center">90</td>
+                        <td align="right">11.0</td>
+                        <td align="right">19</td>
+                    </tr>
+                    <tr>
+                        <td>Far Cry 3</td>
+                        <td>Шутер</td>
+                        <td align="center">Multi</td>
+                        <td>Ubisoft Montreal</td>
+                        <td align="center">2012</td>
+                        <td align="center">88</td>
+                        <td align="right">10.0</td>
+                        <td align="right">16</td>
+                    </tr>
+                    <tr>
+                        <td>Batman: Arkham City</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Rocksteady Studios</td>
+                        <td align="center">2011</td>
+                        <td align="center">96</td>
+                        <td align="right">12.5</td>
+                        <td align="right">13</td>
+                    </tr>
+                    <tr>
+                        <td>Batman: Arkham Knight</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Rocksteady Studios</td>
+                        <td align="center">2015</td>
+                        <td align="center">87</td>
+                        <td align="right">8.0</td>
+                        <td align="right">17</td>
+                    </tr>
+                    <tr>
+                        <td>BioShock Infinite</td>
+                        <td>Шутер</td>
+                        <td align="center">Multi</td>
+                        <td>Irrational Games</td>
+                        <td align="center">2013</td>
+                        <td align="center">94</td>
+                        <td align="right">11.0</td>
+                        <td align="right">12</td>
+                    </tr>
+                    <tr>
+                        <td>Left 4 Dead 2</td>
+                        <td>Шутер</td>
+                        <td align="center">PC</td>
+                        <td>Valve</td>
+                        <td align="center">2009</td>
+                        <td align="center">89</td>
+                        <td align="right">12.0</td>
+                        <td align="right">10</td>
+                    </tr>
+                    <tr>
+                        <td>Team Fortress 2</td>
+                        <td>Шутер</td>
+                        <td align="center">PC</td>
+                        <td>Valve</td>
+                        <td align="center">2007</td>
+                        <td align="center">92</td>
+                        <td align="right">40.0</td>
+                        <td align="right">80</td>
+                    </tr>
+                    <tr>
+                        <td>Borderlands 2</td>
+                        <td>Шутер</td>
+                        <td align="center">Multi</td>
+                        <td>Gearbox Software</td>
+                        <td align="center">2012</td>
+                        <td align="center">89</td>
+                        <td align="right">26.0</td>
+                        <td align="right">30</td>
+                    </tr>
+                    <tr>
+                        <td>Dead Space Remake</td>
+                        <td>Survival Horror</td>
+                        <td align="center">Multi</td>
+                        <td>Motive Studio</td>
+                        <td align="center">2023</td>
+                        <td align="center">89</td>
+                        <td align="right">2.5</td>
+                        <td align="right">12</td>
+                    </tr>
+                    <tr>
+                        <td>Resident Evil 2 Remake</td>
+                        <td>Survival Horror</td>
+                        <td align="center">Multi</td>
+                        <td>Capcom</td>
+                        <td align="center">2019</td>
+                        <td align="center">91</td>
+                        <td align="right">13.9</td>
+                        <td align="right">9</td>
+                    </tr>
+                    <tr>
+                        <td>Resident Evil 7: Biohazard</td>
+                        <td>Survival Horror</td>
+                        <td align="center">Multi</td>
+                        <td>Capcom</td>
+                        <td align="center">2017</td>
+                        <td align="center">86</td>
+                        <td align="right">13.0</td>
+                        <td align="right">10</td>
+                    </tr>
+                    <tr>
+                        <td>Resident Evil Village</td>
+                        <td>Survival Horror</td>
+                        <td align="center">Multi</td>
+                        <td>Capcom</td>
+                        <td align="center">2021</td>
+                        <td align="center">84</td>
+                        <td align="right">10.0</td>
+                        <td align="right">10</td>
+                    </tr>
+                    <tr>
+                        <td>Kingdom Come: Deliverance</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Warhorse Studios</td>
+                        <td align="center">2018</td>
+                        <td align="center">76</td>
+                        <td align="right">6.0</td>
+                        <td align="right">41</td>
+                    </tr>
+                    <tr>
+                        <td>Divinity: Original Sin II</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Larian Studios</td>
+                        <td align="center">2017</td>
+                        <td align="center">93</td>
+                        <td align="right">7.5</td>
+                        <td align="right">59</td>
+                    </tr>
+                    <tr>
+                        <td>Dragon Age: Origins</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>BioWare</td>
+                        <td align="center">2009</td>
+                        <td align="center">91</td>
+                        <td align="right">3.5</td>
+                        <td align="right">45</td>
+                    </tr>
+                    <tr>
+                        <td>Mass Effect Legendary Edition</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>BioWare</td>
+                        <td align="center">2021</td>
+                        <td align="center">90</td>
+                        <td align="right">5.0</td>
+                        <td align="right">60</td>
+                    </tr>
+                    <tr>
+                        <td>NieR: Automata</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>PlatinumGames</td>
+                        <td align="center">2017</td>
+                        <td align="center">88</td>
+                        <td align="right">8.0</td>
+                        <td align="right">21</td>
+                    </tr>
+                    <tr>
+                        <td>Persona 5 Royal</td>
+                        <td>JRPG</td>
+                        <td align="center">Multi</td>
+                        <td>Atlus</td>
+                        <td align="center">2020</td>
+                        <td align="center">95</td>
+                        <td align="right">7.2</td>
+                        <td align="right">100</td>
+                    </tr>
+                    <tr>
+                        <td>Final Fantasy VII Remake</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Square Enix</td>
+                        <td align="center">2020</td>
+                        <td align="center">87</td>
+                        <td align="right">7.0</td>
+                        <td align="right">33</td>
+                    </tr>
+                    <tr>
+                        <td>Final Fantasy XVI</td>
+                        <td>Action-RPG</td>
+                        <td align="center">PlayStation</td>
+                        <td>Square Enix</td>
+                        <td align="center">2023</td>
+                        <td align="center">87</td>
+                        <td align="right">3.5</td>
+                        <td align="right">36</td>
+                    </tr>
+                    <tr>
+                        <td>Yakuza: Like a Dragon</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Ryu Ga Gotoku Studio</td>
+                        <td align="center">2020</td>
+                        <td align="center">84</td>
+                        <td align="right">3.0</td>
+                        <td align="right">45</td>
+                    </tr>
+                    <tr>
+                        <td>Like a Dragon: Infinite Wealth</td>
+                        <td>RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Ryu Ga Gotoku Studio</td>
+                        <td align="center">2024</td>
+                        <td align="center">89</td>
+                        <td align="right">1.5</td>
+                        <td align="right">55</td>
+                    </tr>
+                    <tr>
+                        <td>Total War: Warhammer III</td>
+                        <td>Стратегия</td>
+                        <td align="center">PC</td>
+                        <td>Creative Assembly</td>
+                        <td align="center">2022</td>
+                        <td align="center">85</td>
+                        <td align="right">2.0</td>
+                        <td align="right">40</td>
+                    </tr>
+                    <tr>
+                        <td>Crusader Kings III</td>
+                        <td>Стратегия</td>
+                        <td align="center">Multi</td>
+                        <td>Paradox Development</td>
+                        <td align="center">2020</td>
+                        <td align="center">91</td>
+                        <td align="right">3.0</td>
+                        <td align="right">50</td>
+                    </tr>
+                    <tr>
+                        <td>Europa Universalis IV</td>
+                        <td>Стратегия</td>
+                        <td align="center">PC</td>
+                        <td>Paradox Development</td>
+                        <td align="center">2013</td>
+                        <td align="center">87</td>
+                        <td align="right">2.5</td>
+                        <td align="right">80</td>
+                    </tr>
+                    <tr>
+                        <td>Stellaris</td>
+                        <td>Стратегия</td>
+                        <td align="center">Multi</td>
+                        <td>Paradox Development</td>
+                        <td align="center">2016</td>
+                        <td align="center">78</td>
+                        <td align="right">4.0</td>
+                        <td align="right">40</td>
+                    </tr>
+                    <tr>
+                        <td>Hearts of Iron IV</td>
+                        <td>Стратегия</td>
+                        <td align="center">PC</td>
+                        <td>Paradox Development</td>
+                        <td align="center">2016</td>
+                        <td align="center">79</td>
+                        <td align="right">3.0</td>
+                        <td align="right">35</td>
+                    </tr>
+                    <tr>
+                        <td>Frostpunk</td>
+                        <td>Стратегия</td>
+                        <td align="center">Multi</td>
+                        <td>11 bit studios</td>
+                        <td align="center">2018</td>
+                        <td align="center">84</td>
+                        <td align="right">5.0</td>
+                        <td align="right">11</td>
+                    </tr>
+                    <tr>
+                        <td>Cities: Skylines</td>
+                        <td>Симулятор</td>
+                        <td align="center">Multi</td>
+                        <td>Colossal Order</td>
+                        <td align="center">2015</td>
+                        <td align="center">85</td>
+                        <td align="right">12.0</td>
+                        <td align="right">40</td>
+                    </tr>
+                    <tr>
+                        <td>Factorio</td>
+                        <td>Песочница</td>
+                        <td align="center">Multi</td>
+                        <td>Wube Software</td>
+                        <td align="center">2020</td>
+                        <td align="center">90</td>
+                        <td align="right">4.0</td>
+                        <td align="right">70</td>
+                    </tr>
+                    <tr>
+                        <td>RimWorld</td>
+                        <td>Симулятор</td>
+                        <td align="center">Multi</td>
+                        <td>Ludeon Studios</td>
+                        <td align="center">2018</td>
+                        <td align="center">87</td>
+                        <td align="right">3.5</td>
+                        <td align="right">60</td>
+                    </tr>
+                    <tr>
+                        <td>Valheim</td>
+                        <td>Выживание</td>
+                        <td align="center">Multi</td>
+                        <td>Iron Gate Studio</td>
+                        <td align="center">2021</td>
+                        <td align="center">85</td>
+                        <td align="right">12.0</td>
+                        <td align="right">45</td>
+                    </tr>
+                    <tr>
+                        <td>The Forest</td>
+                        <td>Выживание</td>
+                        <td align="center">Multi</td>
+                        <td>Endnight Games</td>
+                        <td align="center">2018</td>
+                        <td align="center">83</td>
+                        <td align="right">5.5</td>
+                        <td align="right">15</td>
+                    </tr>
+                    <tr>
+                        <td>Sons of the Forest</td>
+                        <td>Выживание</td>
+                        <td align="center">PC</td>
+                        <td>Endnight Games</td>
+                        <td align="center">2024</td>
+                        <td align="center">81</td>
+                        <td align="right">4.0</td>
+                        <td align="right">14</td>
+                    </tr>
+                    <tr>
+                        <td>Rust</td>
+                        <td>Выживание</td>
+                        <td align="center">Multi</td>
+                        <td>Facepunch Studios</td>
+                        <td align="center">2018</td>
+                        <td align="center">69</td>
+                        <td align="right">16.0</td>
+                        <td align="right">100</td>
+                    </tr>
+                    <tr>
+                        <td>Sea of Thieves</td>
+                        <td>Приключения</td>
+                        <td align="center">Multi</td>
+                        <td>Rare</td>
+                        <td align="center">2018</td>
+                        <td align="center">82</td>
+                        <td align="right">30.0</td>
+                        <td align="right">30</td>
+                    </tr>
+                    <tr>
+                        <td>No Mans Sky</td>
+                        <td>Песочница</td>
+                        <td align="center">Multi</td>
+                        <td>Hello Games</td>
+                        <td align="center">2016</td>
+                        <td align="center">77</td>
+                        <td align="right">10.0</td>
+                        <td align="right">40</td>
+                    </tr>
+                    <tr>
+                        <td>Death Stranding</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Kojima Productions</td>
+                        <td align="center">2019</td>
+                        <td align="center">82</td>
+                        <td align="right">10.0</td>
+                        <td align="right">41</td>
+                    </tr>
+                    <tr>
+                        <td>Ghost of Tsushima</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Sucker Punch</td>
+                        <td align="center">2020</td>
+                        <td align="center">83</td>
+                        <td align="right">13.0</td>
+                        <td align="right">25</td>
+                    </tr>
+                    <tr>
+                        <td>Horizon Zero Dawn</td>
+                        <td>Action-RPG</td>
+                        <td align="center">Multi</td>
+                        <td>Guerrilla Games</td>
+                        <td align="center">2017</td>
+                        <td align="center">89</td>
+                        <td align="right">24.0</td>
+                        <td align="right">30</td>
+                    </tr>
+                    <tr>
+                        <td>Marvels Spider-Man</td>
+                        <td>Экшен</td>
+                        <td align="center">Multi</td>
+                        <td>Insomniac Games</td>
+                        <td align="center">2018</td>
+                        <td align="center">87</td>
+                        <td align="right">33.0</td>
+                        <td align="right">17</td>
+                    </tr>
+                    <tr>
+                        <td>God of War Ragnarok</td>
+                        <td>Экшен</td>
+                        <td align="center">PlayStation</td>
+                        <td>Santa Monica Studio</td>
+                        <td align="center">2022</td>
+                        <td align="center">94</td>
+                        <td align="right">15.0</td>
+                        <td align="right">26</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+        </section>
+    </main>
+
+    <footer align="center">
+        <hr width="90%">
+    </footer>
+
+</body>
+</html>
