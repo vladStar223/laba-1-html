@@ -6,14 +6,14 @@
 </head>
 <body>
 
-    <header align="center">
-        <h1>Таблица компьютерных игр</h1>
-        <p>Каталог видеоигр с возможностью настройки графиков, фильтрации и сортировки</p>
+    <header>
+        <h1 align="center">Таблица компьютерных игр</h1>
+        <p align="center">Каталог видеоигр с возможностью настройки графиков, фильтрации и сортировки</p>
         <hr width="90%">
         <nav>
-            <p>
+            <p align="center">
                 <a href="index.html">Главная</a> |
-                    <a href="game.html">Ведьмак 3</a> |
+                <a href="game.html">Ведьмак 3</a> |
                 <a href="table.html">Таблица игр</a>
             </p>
         </nav>  
@@ -23,6 +23,7 @@
     <main>
 
         <section>
+            <h2 align="center">Параметры таблицы и графика</h2>
 
             <details open>
                 <summary><b>График</b></summary>
@@ -46,13 +47,11 @@
                             <input type="checkbox" id="oy_avg_score" name="axis_oy" value="avg_score">
                             <label for="oy_avg_score">Средняя оценка (Metacritic)</label><br>
                             <input type="checkbox" id="oy_sales" name="axis_oy" value="sales">
-                            <label for="oy_sales">Суммарные продажи (млн)</label><br>
-                            <input type="checkbox" id="oy_count" name="axis_oy" value="count">
-                            <label for="oy_count">Количество игр</label>
+                            <label for="oy_sales">Мин</label>
                         </p>
 
                         <p>
-                            <input type="submit" value="Построить">
+                            <input type="button" value="Построить">
                         </p>
 
                         <p><i>Здесь будет график</i></p>
@@ -105,30 +104,30 @@
                         </p>
                         <p>
                             <label for="f_year_from">Год: от </label>
-                            <input type="number" id="f_year_from" name="filter_year_from" min="1990" max="2026" size="6">
+                            <input type="number" id="f_year_from" name="filter_year_from" min="1990" max="2026">
                             <label for="f_year_to"> до </label>
-                            <input type="number" id="f_year_to" name="filter_year_to" min="1990" max="2026" size="6">
+                            <input type="number" id="f_year_to" name="filter_year_to" min="1990" max="2026">
                         </p>
                         <p>
                             <label for="f_score_from">Оценка Metacritic: от </label>
-                            <input type="number" id="f_score_from" name="filter_score_from" min="0" max="100" size="4">
+                            <input type="number" id="f_score_from" name="filter_score_from" min="0" max="100">
                             <label for="f_score_to"> до </label>
-                            <input type="number" id="f_score_to" name="filter_score_to" min="0" max="100" size="4">
+                            <input type="number" id="f_score_to" name="filter_score_to" min="0" max="100">
                         </p>
                         <p>
                             <label for="f_sales_from">Продажи (млн): от </label>
-                            <input type="number" id="f_sales_from" name="filter_sales_from" min="0" max="500" step="0.5" size="5">
+                            <input type="number" id="f_sales_from" name="filter_sales_from" min="0" max="500" step="0.5">
                             <label for="f_sales_to"> до </label>
-                            <input type="number" id="f_sales_to" name="filter_sales_to" min="0" max="500" step="0.5" size="5">
+                            <input type="number" id="f_sales_to" name="filter_sales_to" min="0" max="500" step="0.5">
                         </p>
                         <p>
                             <label for="f_time_from">Время прохождения (ч): от </label>
-                            <input type="number" id="f_time_from" name="filter_time_from" min="1" max="500" size="5">
+                            <input type="number" id="f_time_from" name="filter_time_from" min="1" max="500">
                             <label for="f_time_to"> до </label>
-                            <input type="number" id="f_time_to" name="filter_time_to" min="1" max="500" size="5">
+                            <input type="number" id="f_time_to" name="filter_time_to" min="1" max="500">
                         </p>
                         <p>
-                            <input type="submit" value="Найти">
+                            <input type="button" value="Найти">
                             <input type="reset" value="Сбросить">
                         </p>
                     </fieldset>
@@ -136,10 +135,9 @@
             </details>
             <br>
 
-            <!-- Блок 3: Сортировка -->
             <details>
                 <summary><b>Сортировка</b></summary>
-                <form action="table.html" method="get">
+                <form action="table.html">
                     <fieldset>
                         <legend>Настройка многоуровневой сортировки</legend>
                         <p>
@@ -194,7 +192,7 @@
                         </p>
 
                         <p>
-                            <input type="submit" value="Сортировать">
+                            <input type="button" value="Сортировать">
                         </p>
                     </fieldset>
                 </form>
@@ -202,9 +200,9 @@
             <br>
         </section>
 
-        <section align="center">
+        <section>
             <hr width="90%">
-            <h2>Таблица игр</h2>
+            <h2 align="center">Таблица игр</h2>
 
             <table border="1" cellpadding="6" cellspacing="0" width="95%" align="center">
                 <thead>
@@ -1226,8 +1224,8 @@
         </section>
     </main>
 
-    <footer align="center">
-     <p>Студент: Колмогорцев Владислав Дмитревич | Группа:  Б9124-09.03.04</p>
+    <footer>
+        <p align="center">Студент: Колмогорцев Владислав Дмитриевич  Группа:  Б9124-09.03.04</p>
     </footer>
 
 </body>
