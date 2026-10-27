@@ -1,7 +1,8 @@
-/* Базовые */
+/* Базовые стили */
 body {
     margin: 0;
     padding: 1% 1.5%;
+    font-family: Arial, sans-serif;
     color: #222;
     background: #fff;
     font-size: 13px;
@@ -119,7 +120,7 @@ nav a:active,
 .block-1,
 .block-4 {
     border: 1px solid #c8b59e;
-    border-radius: 20px;
+    border-radius: 18px;
     padding: 14px 2%;
     margin-bottom: 18px;
     overflow: hidden;
@@ -275,23 +276,16 @@ nav a:active,
 }
 
 /* Скругления */
-.round-card,
-.round-blue {
-    border-radius: 20px;
-}
-
-.round-grey,
-.round-img {
+.round-grey {
     border-radius: 20px;
     overflow: hidden;
 }
 
-.round-white,
-.round-oval {
+.round-white {
     border-radius: 45px;
     overflow: hidden;
 }
 
-.round-btn {
-    border-radius: 4px;
+.round-blue {
+    border-radius: 18px;
 }
