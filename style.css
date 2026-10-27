@@ -1,5 +1,10 @@
+/* Базовые стили */
 body {
+    font-family: Arial, sans-serif;
+    color: #222222;
+    background-color: #ffffff;
     font-size: 13px;
+    line-height: 1.45;
 }
 
 .container {
@@ -7,7 +12,6 @@ body {
     margin: 0 auto;
 }
 
-/* Картинки */
 img {
     width: 100%;
     height: 100%;
@@ -26,19 +30,26 @@ img {
 
 .search {
     float: right;
+    margin-top: 2px;
 }
 
-input {
+.search input {
     width: 160px;
-    padding: 3px;
-    border: 1px solid #888;
+    height: 24px;
+    padding: 0 6px;
+    border: 1px solid #888888;
+    font-size: 12px;
+    vertical-align: middle;
 }
 
-button {
-    background: #0088e8;
-    color: #fff;
-    border: none;
-    padding: 4px 10px;
+.search button {
+    height: 24px;
+    padding: 0 10px;
+    background-color: #0088e8;
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 12px;
+    vertical-align: middle;
     cursor: pointer;
 }
 
@@ -57,8 +68,8 @@ nav a {
 
 nav a:active,
 .nav-active {
-    background: #0088e8;
-    color: #fff;
+    background-color: #0088e8;
+    color: #ffffff;
 }
 
 /* Баннеры */
@@ -91,7 +102,7 @@ nav a:active,
     height: 75px;
 }
 
-/* Сетка */
+/* Основная сетка */
 .main {
     margin-bottom: 25px;
     overflow: hidden;
@@ -109,7 +120,7 @@ nav a:active,
     width: 28%;
 }
 
-/* Блоки 1 и 4 */
+/* Карточки 1 и 4 */
 .block-1,
 .block-4 {
     border: 1px solid #c8b59e;
@@ -119,12 +130,14 @@ nav a:active,
     overflow: hidden;
 }
 
-.img-box {
+.block-1 .img-box,
+.block-4 .img-box {
     width: 28%;
     height: 110px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-/* Блок 1 */
 .block-1 .img-box {
     float: left;
 }
@@ -140,7 +153,6 @@ nav a:active,
     width: 50%;
 }
 
-/* Блок 4 */
 .block-4 .title-box {
     float: left;
     width: 18%;
@@ -156,7 +168,12 @@ nav a:active,
     float: right;
 }
 
-/* Блоки 2 и 3 */
+.title-box h3 {
+    font-size: 15px;
+    margin: 0 0 20px 0;
+}
+
+/* Карточки 2 и 3 */
 .row-2-3 {
     margin-bottom: 18px;
     overflow: hidden;
@@ -166,8 +183,9 @@ nav a:active,
 .block-3 {
     width: 44.5%;
     padding: 14px 2%;
-    background: #b9dcfe;
+    background-color: #b9dcfe;
     min-height: 275px;
+    border-radius: 18px;
     overflow: hidden;
 }
 
@@ -179,18 +197,31 @@ nav a:active,
     float: right;
 }
 
+.row-2-3 h3 {
+    text-align: center;
+    font-size: 15px;
+    margin: 4px 0 8px 0;
+}
+
 .row-2-3 .img-box {
     width: 100%;
     height: 85px;
-    background: #fff;
+    background-color: #ffffff;
     margin: 8px 0;
+    border-radius: 45px;
+    overflow: hidden;
 }
 
 /* Кнопки */
 .btn {
     display: inline-block;
-    background: #0088e8;
-    color: #fff;
+    background-color: #0088e8;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 12px;
+    margin-top: 6px;
     border-radius: 3px;
 }
 
@@ -220,8 +251,21 @@ nav a:active,
     width: 58%;
 }
 
+.side-text h4 {
+    text-align: center;
+    font-size: 13px;
+    margin: 0 0 4px 0;
+}
+
+.side-text p {
+    font-size: 11px;
+    color: #555555;
+    margin: 0 0 4px 0;
+}
+
 .side-text a {
     color: #8b6b23;
+    font-size: 12px;
     text-decoration: underline;
 }
 
@@ -231,17 +275,7 @@ nav a:active,
     overflow: hidden;
 }
 
-/* Скругления */
-.round-grey {
-    border-radius: 20px;
-    overflow: hidden;
-}
 
-.round-white {
-    border-radius: 45px;
-    overflow: hidden;
-}
-
-.round-blue {
-    border-radius: 18px;
+footer {
+    text-align: center;
 }
