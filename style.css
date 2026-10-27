@@ -1,12 +1,5 @@
-/* Базовые стили */
 body {
-    margin: 0;
-    padding: 1% 1.5%;
-    font-family: Arial, sans-serif;
-    color: #222;
-    background: #fff;
     font-size: 13px;
-    line-height: 1.45;
 }
 
 .container {
@@ -126,15 +119,6 @@ nav a:active,
     overflow: hidden;
 }
 
-.title-box h3 {
-    font-size: 15px;
-    margin: 0 0 20px;
-}
-
-.text-box p {
-    margin: 0;
-}
-
 .img-box {
     width: 28%;
     height: 110px;
@@ -217,11 +201,6 @@ nav a:active,
     display: inline-block;
     background: #0088e8;
     color: #fff;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 3px 12px;
-    margin-top: 6px;
     border-radius: 3px;
 }
 
@@ -239,11 +218,11 @@ nav a:active,
     overflow: hidden;
 }
 
-.side-item > :first-child {
+.side-item> :first-child {
     float: left;
 }
 
-.side-item > :last-child {
+.side-item> :last-child {
     float: right;
 }
 
@@ -251,21 +230,8 @@ nav a:active,
     width: 58%;
 }
 
-.side-text h4 {
-    text-align: center;
-    font-size: 13px;
-    margin: 0 0 4px 0;
-}
-
-.side-text p {
-    font-size: 11px;
-    color: #555;
-    margin: 0 0 4px 0;
-}
-
 .side-text a {
     color: #8b6b23;
-    font-size: 12px;
     text-decoration: underline;
 }
 
