@@ -1,15 +1,8 @@
-/* Базовые стили */
 body {
     font-family: Arial, sans-serif;
     color: #222222;
     background-color: #ffffff;
     font-size: 13px;
-    line-height: 1.45;
-}
-
-.container {
-    width: 98%;
-    margin: 0 auto;
 }
 
 img {
@@ -17,15 +10,21 @@ img {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: inherit;
+}
+
+
+
+.text-center {
+    text-align: center;
 }
 
 /* Шапка */
-.header {
+.bar {
     border: 1px solid #7eaadb;
     padding: 6px 1%;
     margin-bottom: 15px;
     overflow: hidden;
+    line-height: 28px;
 }
 
 .search {
@@ -42,240 +41,227 @@ img {
     vertical-align: middle;
 }
 
-.search button {
+.search-btn {
     height: 24px;
     padding: 0 10px;
     background-color: #0088e8;
     color: #ffffff;
+    border: 1px solid #0088e8;
     border-radius: 3px;
     font-size: 12px;
     vertical-align: middle;
     cursor: pointer;
 }
 
-nav {
+.menu {
     text-align: center;
-    line-height: 28px;
 }
 
-nav a {
+.menu a {
     display: inline-block;
     color: #0088e8;
-    text-decoration: none;
-    font-weight: bold;
     padding: 4px 12px;
-}
-
-nav a:active,
-.nav-active {
-    background-color: #0088e8;
-    color: #ffffff;
-}
-
-/* Баннеры */
-.hero {
-    margin-bottom: 20px;
-}
-
-.hero-top {
-    overflow: hidden;
-    height: 180px;
-}
-
-.banner-peach {
-    float: left;
-    width: 66%;
-    height: 180px;
-}
-
-.hero-right {
-    float: right;
-    width: 34%;
-    height: 180px;
-}
-
-.hero-right div {
-    height: 90px;
-}
-
-.banner-pink {
-    height: 75px;
-}
-
-/* Основная сетка */
-.main {
-    margin-bottom: 25px;
-    overflow: hidden;
-}
-
-.content {
-    float: left;
-    width: 67%;
-    border-right: 2px solid #b79569;
-    padding-right: 2%;
-}
-
-.sidebar {
-    float: right;
-    width: 28%;
-}
-
-/* Карточки 1 и 4 */
-.block-1,
-.block-4 {
-    border: 1px solid #c8b59e;
-    border-radius: 18px;
-    padding: 14px 2%;
-    margin-bottom: 18px;
-    overflow: hidden;
-}
-
-.block-1 .img-box,
-.block-4 .img-box {
-    width: 28%;
-    height: 110px;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.block-1 .img-box {
-    float: left;
-}
-
-.block-1 .title-box {
-    float: left;
-    width: 22%;
-    text-align: center;
-}
-
-.block-1 .text-box {
-    float: right;
-    width: 50%;
-}
-
-.block-4 .title-box {
-    float: left;
-    width: 18%;
-}
-
-.block-4 .text-box {
-    float: left;
-    width: 50%;
-    margin-left: 2%;
-}
-
-.block-4 .img-box {
-    float: right;
-}
-
-.title-box h3 {
-    font-size: 15px;
-    margin: 0 0 20px 0;
-}
-
-/* Карточки 2 и 3 */
-.row-2-3 {
-    margin-bottom: 18px;
-    overflow: hidden;
-}
-
-.block-2,
-.block-3 {
-    width: 44.5%;
-    padding: 14px 2%;
-    background-color: #b9dcfe;
-    min-height: 275px;
-    border-radius: 18px;
-    overflow: hidden;
-}
-
-.block-2 {
-    float: left;
-}
-
-.block-3 {
-    float: right;
-}
-
-.row-2-3 h3 {
-    text-align: center;
-    font-size: 15px;
-    margin: 4px 0 8px 0;
-}
-
-.row-2-3 .img-box {
-    width: 100%;
-    height: 85px;
-    background-color: #ffffff;
-    margin: 8px 0;
-    border-radius: 45px;
-    overflow: hidden;
-}
-
-/* Кнопки */
-.btn {
-    display: inline-block;
-    background-color: #0088e8;
-    color: #ffffff;
     text-decoration: none;
-    font-size: 11px;
     font-weight: bold;
-    padding: 3px 12px;
-    margin-top: 6px;
+}
+
+.menu a.active {
+    background: #0088e8;
+    color: white;
     border-radius: 3px;
 }
 
-.btn-left {
-    float: left;
+/* Контейнер контента */
+.content {
+    width: 98%;
+    margin: auto;
+}
+
+/* Баннеры */
+.gallery {
+    margin-bottom: 20px;
+}
+
+.gallery-top {
+    height: 180px;
+}
+
+.gallery-main,
+.gallery-stack {
+    display: inline-block;
+    vertical-align: top;
+    height: 180px;
+}
+
+.gallery-main {
+    width: 66%;
+}
+
+.gallery-stack {
+    width: 34%;
+}
+
+.gallery-tile {
+    height: 90px;
+}
+
+.gallery-bottom {
+    height: 75px;
+    width: 100%;
+}
+
+
+
+.left,
+.right {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.left {
+    width: 68%;
+    border-right: 2px solid #c8b59e;
+    padding-right: 20px;
+}
+
+.right {
+    width: 32%;
+    padding-left: 20px;
+}
+
+/* Горизонтальные карточки */
+.card-horiz {
+    border: 1px solid #c8b59e;
+    border-radius: 18px;
+    padding: 14px 10px;
+    margin-bottom: 18px;
+}
+
+.card-horiz > * {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+
+.card-img {
+    width: 30%;
+    height: 135px;
+    border-radius: 20px;
+}
+
+.card-title {
+    width: 20%;
+    text-align: center;
+}
+
+.card-reverse .card-title {
+    text-align: left;
+}
+
+.card-text {
+    width: 48%;
+}
+
+.card-reverse .card-text {
+    width: 50%;
+}
+
+.card-reverse .card-img {
+    width: 28%;
+}
+
+/* Вертикальные карточки */
+.cards-row {
+    margin-bottom: 18px;
+}
+
+.card-vert {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 48%;
+    background-color: #b9dcfe;
+    border-radius: 18px;
+    padding: 14px;
+}
+
+.card-vert:first-child {
+    margin-right: 3.5%;
+}
+
+
+
+.img-pill {
+    width: 100%;
+    height: 85px;
+    background-color: #ffffff;
+    border-radius: 45px;
+}
+
+/* Кнопки */
+.button {
+    margin: 6px 0 0;
+    display: inline-block;
+    background: #0088e8;
+    color: white;
+    padding: 3px 12px;
+    border: 1px solid #0088e8;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .btn-right {
     float: right;
 }
 
-/* Сайдбар */
-.side-item {
-    margin-bottom: 22px;
-    overflow: hidden;
-}
-
-.side-item> :first-child {
+.btn-left {
     float: left;
 }
 
-.side-item> :last-child {
-    float: right;
+/* Сайдбар */
+.side-item {
+    margin-bottom: 22px;
+}
+
+.side-item > * {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.side-item > :first-child {
+    margin-right: 4%;
 }
 
 .side-text {
-    width: 58%;
+    width: 56%;
 }
 
-.side-text h4 {
-    text-align: center;
-    font-size: 13px;
-    margin: 0 0 4px 0;
+.img-side {
+    width: 38%;
+    height: 80px;
+    border-radius: 6px;
 }
 
-.side-text p {
-    font-size: 11px;
-    color: #555555;
-    margin: 0 0 4px 0;
-}
-
-.side-text a {
+.side-link {
     color: #8b6b23;
     font-size: 12px;
     text-decoration: underline;
+    display: block;
+    text-align: right;
 }
 
-.side-img {
-    width: 38%;
-    height: 80px;
-    overflow: hidden;
-}
-
-
+/* Подвал */
 footer {
     text-align: center;
+    border-top: 1px solid gray;
+    padding: 15px 0;
+    margin-top: 20px;
 }
+
+
