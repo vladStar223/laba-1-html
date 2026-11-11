@@ -1,6 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
-    color: #222222;
     background-color: #ffffff;
     font-size: 13px;
 }
@@ -11,19 +9,14 @@ img {
     object-fit: cover;
     display: block;
 }
-
-
-
 .text-center {
     text-align: center;
 }
-
 /* Шапка */
 .bar {
     border: 1px solid #7eaadb;
     padding: 6px 1%;
     margin-bottom: 15px;
-    overflow: hidden;
     line-height: 28px;
 }
 
@@ -71,13 +64,13 @@ img {
     border-radius: 3px;
 }
 
-/* Контейнер контента */
+
 .content {
     width: 98%;
     margin: auto;
 }
 
-/* Баннеры */
+
 .gallery {
     margin-bottom: 20px;
 }
@@ -130,7 +123,7 @@ img {
     padding-left: 20px;
 }
 
-/* Горизонтальные карточки */
+
 .card-horiz {
     border: 1px solid #c8b59e;
     border-radius: 18px;
@@ -212,7 +205,7 @@ img {
     text-decoration: none;
     font-size: 11px;
     font-weight: bold;
-    cursor: pointer;
+
 }
 
 .btn-right {
@@ -259,9 +252,6 @@ img {
 /* Подвал */
 footer {
     text-align: center;
-    border-top: 1px solid gray;
-    padding: 15px 0;
-    margin-top: 20px;
 }
 
 
