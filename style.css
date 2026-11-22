@@ -12,46 +12,63 @@ img {
 .text-center {
     text-align: center;
 }
-/* Шапка */
+
+
 .bar {
+    margin: auto;
     border: 1px solid #7eaadb;
     padding: 6px 1%;
     margin-bottom: 15px;
-    line-height: 28px;
 }
 
 .search {
-    float: right;
-    margin-top: 2px;
+    
+    display: inline-block;
+    margin:0;
+    
+
 }
 
+
+.nav{
+    vertical-align: middle;
+    display: inline-block;
+    text-align: end;
+    
+}
+
+.search {
+  display: inline-block;
+  text-align: end;
+}
 .search input {
-    width: 160px;
-    height: 24px;
     padding: 0 6px;
     border: 1px solid #888888;
     font-size: 12px;
-    vertical-align: middle;
 }
 
 .search-btn {
-    height: 24px;
+ box-sizing: border-box;
     padding: 0 10px;
     background-color: #0088e8;
     color: #ffffff;
     border: 1px solid #0088e8;
     border-radius: 3px;
     font-size: 12px;
-    vertical-align: middle;
     cursor: pointer;
 }
 
 .menu {
+    display: inline-block;
     text-align: center;
+    width: 75%;
+    box-sizing: border-box;
+    
 }
 
+
 .menu a {
-    display: inline-block;
+  display: inline-block;
     color: #0088e8;
     padding: 4px 12px;
     text-decoration: none;
@@ -81,8 +98,9 @@ img {
 
 .gallery-main,
 .gallery-stack {
-    display: inline-block;
-    vertical-align: top;
+    
+    display: block;
+    float: left;
     height: 180px;
 }
 
@@ -196,7 +214,6 @@ img {
 /* Кнопки */
 .button {
     margin: 6px 0 0;
-    display: inline-block;
     background: #0088e8;
     color: white;
     padding: 3px 12px;
@@ -248,10 +265,18 @@ img {
     display: block;
     text-align: right;
 }
+.side-left-link{
+    color: #8b6b23;
+    font-size: 12px;
+    text-decoration: underline;
+    display: block;
+    text-align: left;
+}
 
 /* Подвал */
 footer {
     text-align: center;
 }
+
 
 
