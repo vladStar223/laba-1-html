@@ -2,281 +2,172 @@ body {
     background-color: #ffffff;
     font-size: 13px;
 }
-
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.text-center {
-    text-align: center;
-}
-
-
-.bar {
-    margin: auto;
-    border: 1px solid #7eaadb;
-    padding: 6px 1%;
-    margin-bottom: 15px;
-}
-
-.search {
-    
-    display: inline-block;
-    margin:0;
-    
-
-}
-
-
-.nav{
-    vertical-align: middle;
-    display: inline-block;
-    text-align: end;
-    
-}
-
-.search {
-  display: inline-block;
-  text-align: end;
-}
-.search input {
-    padding: 0 6px;
-    border: 1px solid #888888;
-    font-size: 12px;
-}
-
-.search-btn {
- box-sizing: border-box;
-    padding: 0 10px;
-    background-color: #0088e8;
-    color: #ffffff;
-    border: 1px solid #0088e8;
-    border-radius: 3px;
-    font-size: 12px;
-    cursor: pointer;
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu {
-    display: inline-block;
-    text-align: center;
-    width: 75%;
-    box-sizing: border-box;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+
+}
+.menu-item {
+    font-size: 13px;
+    margin: 0 10px;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #6a0f85;
+    height: 30px;
+}
+.logo-text {
+ font-size: 13px;
+}
+
+.galary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 100px;
+    height: 150px;
+}
+
+.galary-item {
+   flex: 1;
+   background-color: #522c5e;
+}
+.galary-item-2 {
+   flex: 2;
+   background-color: hsl(0, 0%, 0%);
+}
+
+
+.circle-galary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     
 }
+.circle-galary-item {
+    display: flex;
+    flex: 1 1 200px;        
+    max-width: 200px; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5px;
 
-
-.menu a {
-  display: inline-block;
-    color: #0088e8;
-    padding: 4px 12px;
-    text-decoration: none;
-    font-weight: bold;
 }
 
-.menu a.active {
-    background: #0088e8;
-    color: white;
-    border-radius: 3px;
-}
-
-
-.content {
-    width: 98%;
-    margin: auto;
-}
-
-
-.gallery {
-    margin-bottom: 20px;
-}
-
-.gallery-top {
-    height: 180px;
-}
-
-.gallery-main,
-.gallery-stack {
+.circle-galary-item-img  {
+    border-radius: 100%;
+   height: 50px;
+   width: 50px;
+   
+   
+  
+   background-color: hsl(41, 87%, 44%);
     
-    display: block;
-    float: left;
-    height: 180px;
 }
-
-.gallery-main {
-    width: 66%;
+.circle-galary-item-text {
+   
+    margin: 0;
+    font-size: 6px;
+    color: hsl(0, 13%, 9%);
 }
-
-.gallery-stack {
-    width: 34%;
+.circle-galary-item-text-header {
+    font-size: 10px;
+    font-weight: 700;
+    flex-grow: 1;     
 }
-
-.gallery-tile {
-    height: 90px;
-}
-
-.gallery-bottom {
-    height: 75px;
-    width: 100%;
-}
-
-
-
-.left,
-.right {
-    display: inline-block;
-    vertical-align: top;
-    box-sizing: border-box;
-}
-
-.left {
-    width: 68%;
-    border-right: 2px solid #c8b59e;
-    padding-right: 20px;
-}
-
-.right {
-    width: 32%;
-    padding-left: 20px;
+/* работа */ 
+.circle-galary-item-button {
+   display: inline-flex;  
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 2px;
+  border: none;
+  background-color: hsl(41, 87%, 44%);
+  cursor: pointer;
 }
 
 
-.card-horiz {
-    border: 1px solid #c8b59e;
-    border-radius: 18px;
-    padding: 14px 10px;
-    margin-bottom: 18px;
+.center-block{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
-
-.card-horiz > * {
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    padding: 0 8px;
-}
-
-.card-img {
+.center-block-item {
+    height: 50px;
     width: 30%;
-    height: 135px;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(41, 87%, 44%);
 }
 
-.card-title {
-    width: 20%;
+.center-block-item-part1 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-around;
+}
+.center-block-item-img {
+    flex: 1;
+    height: 20px;
+    border-radius: 30%;
+    background-color: hsl(0, 0%, 0%);
+}
+
+.center-block-item-header {
+    font-size: 6px;
     text-align: center;
+    font-weight: 700;
+    color: hsl(0, 13%, 9%);
 }
-
-.card-reverse .card-title {
-    text-align: left;
-}
-
-.card-text {
-    width: 48%;
-}
-
-.card-reverse .card-text {
-    width: 50%;
-}
-
-.card-reverse .card-img {
-    width: 28%;
-}
-
-/* Вертикальные карточки */
-.cards-row {
-    margin-bottom: 18px;
-}
-
-.card-vert {
-    display: inline-block;
-    vertical-align: top;
-    box-sizing: border-box;
-    width: 48%;
-    background-color: #b9dcfe;
-    border-radius: 18px;
-    padding: 14px;
-}
-
-.card-vert:first-child {
-    margin-right: 3.5%;
-}
-
-
-
-.img-pill {
-    width: 100%;
-    height: 85px;
-    background-color: #ffffff;
-    border-radius: 45px;
-}
-
-/* Кнопки */
-.button {
-    margin: 6px 0 0;
-    background: #0088e8;
-    color: white;
-    padding: 3px 12px;
-    border: 1px solid #0088e8;
-    border-radius: 3px;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: bold;
+.center-block-item-part2 {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
 
 }
 
-.btn-right {
-    float: right;
-}
-
-.btn-left {
-    float: left;
-}
-
-/* Сайдбар */
-.side-item {
-    margin-bottom: 22px;
-}
-
-.side-item > * {
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-}
-
-.side-item > :first-child {
-    margin-right: 4%;
-}
-
-.side-text {
-    width: 56%;
-}
-
-.img-side {
-    width: 38%;
-    height: 80px;
-    border-radius: 6px;
-}
-
-.side-link {
-    color: #8b6b23;
-    font-size: 12px;
-    text-decoration: underline;
-    display: block;
-    text-align: right;
-}
-.side-left-link{
-    color: #8b6b23;
-    font-size: 12px;
-    text-decoration: underline;
-    display: block;
-    text-align: left;
-}
-
-/* Подвал */
-footer {
+.center-block-item-text {
+    font-size: 10px;
     text-align: center;
+    font-weight: 700;
+    color: hsl(0, 13%, 9%);
 }
 
 
+.block-button {
+    
+    font-size: 8px;
+}
 
+.two-blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+.two-blocks-item {
+    width: 40%;
+    height: 50px;
+    background-color: hsl(41, 87%, 44%); 
+}
