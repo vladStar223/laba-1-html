@@ -111,35 +111,44 @@ body {
     gap: 10px;
 }
 .center-block-item {
-    height: 50px;
+     
+    border-radius: 30px;
     width: 30%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    
     background-color: hsl(41, 87%, 44%);
+    align-items:center;    /* колонки тянутся на всю высоту */
 }
 
 .center-block-item-part1 {
     flex: 1;
     display: flex;
     flex-direction: row;
+    padding: 10px;
+     justify-content: space-around;
+     gap: 25px;
     
-    justify-content: space-around;
 }
 .center-block-item-img {
-    flex: 1;
-    height: 20px;
-    border-radius: 30%;
-    background-color: hsl(0, 0%, 0%);
+    flex: 0 0 80px;         /* не сжимается и не растягивается, ширина 180px */
+    /* альтернатива в % от родителя: flex: 0 0 60%; */
+    min-height: 40px;       /* гарантированная высота вместо height: 90% */
+    align-self: stretch;     /* растянется по высоте карточки, если текста много */
+    border-radius: 15px;
+    background-color: #ffffff;
+    
 }
 
 .center-block-item-header {
-    font-size: 6px;
-    text-align: center;
+    font-size: 10px;         /* нормальный читаемый размер */
     font-weight: 700;
+    text-align: left;
     color: hsl(0, 13%, 9%);
+    margin: 0;
 }
+
 .center-block-item-part2 {
     flex: 3;
     display: flex;
@@ -147,17 +156,16 @@ body {
 
 }
 
-.center-block-item-text {
-    font-size: 10px;
-    text-align: center;
-    font-weight: 700;
-    color: hsl(0, 13%, 9%);
+.center-block-item-text  {
+    font-size: 5px;
+    text-align: justify;
+    line-height: 1.5;
 }
 
 
 .block-button {
     
-    font-size: 8px;
+    font-size: 3px;
 }
 
 .two-blocks {
