@@ -2,7 +2,16 @@ body {
     background-color: #ffffff;
     font-size: 13px;
 }
-.content {
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    overflow: hidden;
+}
+
+.page-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,14 +33,13 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background-color: #6a0f85;
     height: 30px;
 }
 .logo-text {
  font-size: 13px;
 }
 
-.galary {
+.gallery {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -39,23 +47,23 @@ body {
     height: 150px;
 }
 
-.galary-item {
+.gallery-item {
    flex: 1;
    background-color: #522c5e;
 }
-.galary-item-2 {
+.gallery-item-wide {
    flex: 2;
    background-color: hsl(0, 0%, 0%);
 }
 
 
-.circle-galary {
+.circle-gallery {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     
 }
-.circle-galary-item {
+.circle-gallery-item {
     display: flex;
     flex: 1 1 200px;        
     max-width: 200px; 
@@ -66,7 +74,7 @@ body {
 
 }
 
-.circle-galary-item-img  {
+.circle-gallery-img  {
     border-radius: 100%;
    height: 50px;
    width: 50px;
@@ -76,19 +84,19 @@ body {
    background-color: hsl(41, 87%, 44%);
     
 }
-.circle-galary-item-text {
+.circle-gallery-text {
    
-    margin: 0;
-    font-size: 6px;
-    color: hsl(0, 13%, 9%);
+     margin: 0;
+     font-size: 6px;
+     color: hsl(0, 13%, 9%);
 }
-.circle-galary-item-text-header {
+.circle-gallery-title {
     font-size: 10px;
     font-weight: 700;
     flex-grow: 1;     
 }
 /* работа */ 
-.circle-galary-item-button {
+.circle-gallery-button {
    display: inline-flex;  
   align-items: center;
   justify-content: center;
@@ -102,7 +110,7 @@ body {
 }
 
 
-.center-block{
+.cards-horizontal{
     display: flex;
     padding: 10px;
     flex-direction: column;
@@ -110,29 +118,38 @@ body {
     align-items: center;
     gap: 10px;
 }
-.center-block-item {
-     
-    border-radius: 30px;
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-    background-color: hsl(41, 87%, 44%);
-    align-items:center;    /* колонки тянутся на всю высоту */
+.card-horizontal {
+     width: 30%;   
+                 /* оставьте вашу текущую ширину под страницу */
+     min-height: 55px;
+     padding: 10px;
+     border-radius: 20px;
+  gap: 10px;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     min-width: 250px;
+     background-color: hsl(41, 87%, 44%);
+    align-items: stretch;  /* колонки тянутся на всю высоту */
 }
 
-.center-block-item-part1 {
-    flex: 1;
+.card-media {
+   flex: 0 0 auto;
     display: flex;
+    
     flex-direction: row;
     padding: 10px;
      justify-content: space-around;
      gap: 25px;
     
 }
-.center-block-item-img {
-    flex: 0 0 80px;         /* не сжимается и не растягивается, ширина 180px */
+.card-img {
+    width: 100px;    
+    min-width: 0;          /* задаём размер явно */
+    min-height: 80px;
+    flex-shrink: 0;   
+    flex:2;
+     /* не сжимается и не растягивается, ширина 180px */
     /* альтернатива в % от родителя: flex: 0 0 60%; */
     min-height: 40px;       /* гарантированная высота вместо height: 90% */
     align-self: stretch;     /* растянется по высоте карточки, если текста много */
@@ -141,41 +158,58 @@ body {
     
 }
 
-.center-block-item-header {
+.card-title {
     font-size: 10px;         /* нормальный читаемый размер */
     font-weight: 700;
-    text-align: left;
+    text-align: center;      /* заголовок слева, а не по центру */
     color: hsl(0, 13%, 9%);
     margin: 0;
 }
 
-.center-block-item-part2 {
-    flex: 3;
+
+.card-header {
+     gap: 10px;
+    min-width: 0;
+    
+}
+
+
+
+ .card-body {
+    flex: 4;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-
+    align-items: stretch;      /* текст тянется на все 100% ширины колонки */
+    gap: 10px;
 }
 
-.center-block-item-text  {
+.card-text {
+    flex: 1;                   /* занимает всё вертикальное пространство до ссылки */
+    width: 100%;
+    font-size: 8px;
+      /* выравнивание по обоим краям */
+    hyphens: auto;  
+               /* аккуратные переносы (нужен <html lang="ru">) */         /* регулирует плотность строк по высоте */
+}
+
+.card-button {
     font-size: 5px;
-    text-align: justify;
-    line-height: 1.5;
+    align-self: flex-start;    /* ссылка остаётся по ширине слова, а не на 100% */
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 
-.block-button {
-    
-    font-size: 3px;
-}
-
-.two-blocks {
+.cards-vertical {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     gap: 10px;
 }
-.two-blocks-item {
-    width: 40%;
-    height: 50px;
+.card-vertical {
+
+    display: flex;
+    flex-direction: column;
     background-color: hsl(41, 87%, 44%); 
 }
